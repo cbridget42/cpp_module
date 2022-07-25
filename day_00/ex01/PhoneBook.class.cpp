@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 16:10:57 by cbridget          #+#    #+#             */
-/*   Updated: 2022/07/25 19:59:14 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/07/25 20:54:03 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void PhoneBook::addnewcont(void) {
 }
 
 void PhoneBook::search(void) {
-	std::cout << "index     |first name|last name |nickname  \n";
+	std::cout << "|index     |first name|last name |nickname  |\n";
 	for (int j = 0; j < i; j++)
-		contacts[j].displaycontact(j);
+		contacts[j].displaycontact(j + 1);
 }

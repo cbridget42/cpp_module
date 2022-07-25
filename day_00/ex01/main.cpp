@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 16:59:41 by cbridget          #+#    #+#             */
-/*   Updated: 2022/07/25 19:55:05 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/07/25 20:58:16 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,14 @@ bool ft_getline(std::string *line)
 
 void print_row(std::string &str)
 {
+	int length = str.size();
 	for (int i = 0; i < 10; i++){
-		if (i == 9 && str.size() > 10)
+		if (i == 9 && length > 10)
 			std::cout << '.';
-		std::cout << str.at(i);
+		else if (i < length)
+			std::cout << static_cast<char>(str.at(i));
+		else
+			std::cout << ' ';
 	}
 	std::cout << '|';
 	return;

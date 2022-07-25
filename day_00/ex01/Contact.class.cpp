@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 16:13:55 by cbridget          #+#    #+#             */
-/*   Updated: 2022/07/25 19:54:55 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/07/25 20:50:12 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void Contact::addnewcont(void) {
 }
 
 void Contact::displaycontact(int index) {
-	std::cout << index << "         |";
+	std::cout << '|' << index << "         |";
 	print_row(first_name);
 	print_row(last_name);
 	print_row(nickname);
