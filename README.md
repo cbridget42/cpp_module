@@ -1,1 +1,2 @@
-# cpp_module
+# cpp_module  
+The goal of these modules is to introduce you to Object-Oriented Programming.  
