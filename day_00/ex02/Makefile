@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cbridget <cbridget@student-21school.ru>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/25 17:28:52 by cbridget          #+#    #+#              #
-#    Updated: 2022/07/26 19:52:50 by cbridget         ###   ########.fr        #
+#    Created: 2022/07/26 19:51:17 by cbridget          #+#    #+#              #
+#    Updated: 2022/07/26 22:01:27 by cbridget         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = account
 
-SRC = Contact.class.cpp PhoneBook.class.cpp main.cpp
+SRC = tests.cpp Account.cpp
 
-HDR = Contact.class.hpp PhoneBook.class.hpp
+HDR = Account.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
