@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student-21school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 16:50:12 by cbridget          #+#    #+#             */
-/*   Updated: 2022/07/26 22:18:07 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/07/26 22:26:28 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
 Account::Account( int initial_deposit ) {
-//	static int index = 0;
 	_accountIndex = _nbAccounts++;
 	_amount = initial_deposit;
 	_totalAmount += initial_deposit;
