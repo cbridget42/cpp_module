@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/27 14:29:55 by cbridget          #+#    #+#              #
-#    Updated: 2022/07/30 16:29:15 by cbridget         ###   ########.fr        #
+#    Created: 2022/07/30 16:36:25 by cbridget          #+#    #+#              #
+#    Updated: 2022/07/30 16:40:04 by cbridget         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombie
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp Zombie.cpp zombieHorde.cpp
 
 HDR = Zombie.hpp
 

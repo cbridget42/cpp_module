@@ -5,20 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 14:31:39 by cbridget          #+#    #+#             */
-/*   Updated: 2022/07/30 16:29:52 by cbridget         ###   ########.fr       */
+/*   Created: 2022/07/30 17:50:52 by cbridget          #+#    #+#             */
+/*   Updated: 2022/07/30 17:59:00 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
+#include <iostream>
+#include <string>
 
 int main() {
-	Zombie *ptr = newZombie("heap_zombie");
-	ptr->announce();
-	randomChump("stack_zombie");
-	delete ptr;
+	std::string str = "HI THIS IS BRAIN";
+	std::string *ptr = &str;
+	std::string &ref = str;
+	std::cout << "The memory address of the string variable: " << &str \
+			<< "\nThe memory address held by stringPTR: " << ptr \
+			<< "\nThe memory address held by stringREF: " << &ref << std::endl;
+	std::cout << "The value of the string variable: " << str \
+			<< "\nThe value pointed to by stringPTR: " << *ptr \
+			<< "\nThe value pointed to by stringREF: " << ref << std::endl;
 	return 0;
 }

@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/27 14:29:55 by cbridget          #+#    #+#              #
-#    Updated: 2022/07/30 16:29:15 by cbridget         ###   ########.fr        #
+#    Created: 2022/07/30 17:23:43 by cbridget          #+#    #+#              #
+#    Updated: 2022/07/30 17:56:36 by cbridget         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = brain
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp
 
-HDR = Zombie.hpp
+HDR =
 
 OBJ = $(SRC:.cpp=.o)
 
