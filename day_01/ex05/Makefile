@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/02 14:57:24 by cbridget          #+#    #+#              #
-#    Updated: 2022/08/04 17:19:53 by cbridget         ###   ########.fr        #
+#    Created: 2022/08/04 17:25:18 by cbridget          #+#    #+#              #
+#    Updated: 2022/08/04 19:28:45 by cbridget         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = replace
+NAME = harl
 
-SRC = main.cpp
+SRC = main.cpp harl.cpp
 
-HDR =
+HDR = harl.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

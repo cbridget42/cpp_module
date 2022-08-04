@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cbridget <cbridget@student-21school.ru>    +#+  +:+       +#+         #
+#    By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/01 22:34:45 by cbridget          #+#    #+#              #
-#    Updated: 2022/08/02 14:37:25 by cbridget         ###   ########.fr        #
+#    Updated: 2022/08/04 17:22:03 by cbridget         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ HDR = Weapon.hpp HumanA.hpp HumanB.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
-FLAGS = -Wall -Wextra -Werror #-std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC = g++
 
