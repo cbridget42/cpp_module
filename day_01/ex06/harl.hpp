@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/30 16:37:06 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/05 16:05:29 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/04 17:50:11 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/05 15:48:11 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-Zombie* zombieHorde(int N, std::string name);
+#include <iostream>
+#include <string>
 
-int main() {
-	Zombie *array_z = zombieHorde(5, "Horde");
-	if (!array_z)
-		return 1;
-	for (int i = 0; i < 5; i++) {
-		array_z[i].announce();
-	}
-	delete [] array_z;
-	return 0;
-}
+enum complains {
+	c_debug,
+	c_info,
+	c_warning,
+	c_error,
+	c_invalid_arg
+};
+
+class harl {
+	public:
+		typedef void (harl::*t_harlFcn)();
+		t_harlFcn arrayF[4];
+		harl(void);
+		void complain(std::string level);
+	private:
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+};
+
+# endif
