@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 20:34:56 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/09 14:10:45 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/08/09 16:00:14by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,66 @@ Fixed &				Fixed::operator=( Fixed const & rhs )
 		this->_n = rhs.getRawBits();
 	}
 	return *this;
+}
+
+Fixed &Fixed::operator+( Fixed const & rhs ) {
+	Fixed res(this->_n + rhs._n);
+	return res;
+}
+
+Fixed &Fixed::operator-( Fixed const & rhs ) {
+	Fixed res(this->_n - rhs._n);
+	return res;
+}
+
+Fixed &Fixed::operator*( Fixed const & rhs ) {
+	Fixed res(this->_n * rhs._n);
+	return res;
+}
+
+Fixed &Fixed::operator/( Fixed const & rhs ) {
+	Fixed res(this->_n / rhs._n);
+	return res;
+}
+
+Fixed &Fixed::operator++(void) {
+	
+}
+
+bool Fixed::operator>(Fixed const &rhs) {
+	if (this->_n > rhs._n)
+		return true;
+	else
+		return false;
+}
+
+bool Fixed::operator<(Fixed const &rhs) {
+	if (this->_n < rhs._n)
+		return true;
+	else
+		return false;
+}
+
+bool Fixed::operator>=( Fixed const & rhs ) {
+	if (this->_n >= rhs._n)
+		return true;
+	else
+		return false;
+}
+
+bool Fixed::operator<=( Fixed const & rhs ) {
+	if (this->_n <= rhs._n)
+		return true;
+	else
+		return true;
+}
+
+bool Fixed::operator==( Fixed const & rhs ) {
+	return this->_n == rhs._n;
+}
+
+bool Fixed::operator!=( Fixed const & rhs ) {
+	return this->_n != rhs._n;
 }
 
 std::ostream &			operator<<( std::ostream & o, Fixed const & i )
