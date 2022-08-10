@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 20:34:56 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/09 14:10:45 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/08/10 16:31:46 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Fixed::Fixed( const Fixed & src )
 	*this = src;
 }
 
-Fixed::Fixed( int const x )/* : _n(x) */{
+Fixed::Fixed( int const x ) {
 	std::cout << "Int constructor called\n";
 	_n = x * (1 << Fixed::getFractionalBits());
 }
@@ -89,7 +89,6 @@ int Fixed::toInt(void) const {
 */
 
 int Fixed::getRawBits(void) const {
-//	std::cout << "getRawBits member function called\n";
 	return this->_n;
 }
 
