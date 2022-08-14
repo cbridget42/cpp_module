@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/13 19:12:22 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/14 17:18:37 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/13 17:41:08 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/14 17:54:01 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-FragTrap::FragTrap() : ClapTrap("def")
+ScavTrap::ScavTrap()
 {
-	hit_points = 100;
-	energy_points = 100;
-	attack_damage = 30;
-	std::cout << "FragTrap constructor called!\n";
-}
-
-FragTrap::FragTrap(std::string const str) : ClapTrap(str) {
+	name = "def";
 	hit_points = 100;
 	energy_points = 50;
-	attack_damage = 30;
-	std::cout << "FragTrap constructor called! FragTrap: " << name << " created!\n";
+	attack_damage = 20;
+	std::cout << "ScavTrap constructor called!\n";
 }
 
-FragTrap::FragTrap( const FragTrap & src )
+ScavTrap::ScavTrap(std::string const str) : ClapTrap(str) {
+	hit_points = 100;
+	energy_points = 50;
+	attack_damage = 20;
+	std::cout << "ScavTrap constructor called! ScavTrap: " << name << " created!\n";
+}
+
+ScavTrap::ScavTrap( const ScavTrap & src )
 {
 	*this = src;
 }
@@ -41,9 +42,9 @@ FragTrap::FragTrap( const FragTrap & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-FragTrap::~FragTrap()
+ScavTrap::~ScavTrap()
 {
-	std::cout << "FragTrap destructor called! FragTrap: " << name << " destroed!\n";
+	std::cout << "ScavTrap destructor called! ScavTrap: " << name << " destroed!\n";
 }
 
 
@@ -51,7 +52,7 @@ FragTrap::~FragTrap()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-FragTrap &				FragTrap::operator=( FragTrap const & rhs )
+ScavTrap &				ScavTrap::operator=( ScavTrap const & rhs )
 {
 	if ( this != &rhs )
 	{
@@ -68,8 +69,15 @@ FragTrap &				FragTrap::operator=( FragTrap const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void FragTrap::highFivesGuys(void) {
-	std::cout << "FragTrap: " << name << ": a positive high fives request!\n";
+void	ScavTrap::attack(const std::string& target) {
+	if (energy_points == 0 || hit_points <= 0)
+		return ;
+	energy_points--;
+	std::cout << "ScavTrap " << name << " ready and attacks " << target << " causing " << attack_damage << " points of damage!\n";
+}
+
+void	ScavTrap::guardGate() {
+	std::cout << "ScavTrap " << name << " is now in Gate keeper mode.\n";
 }
 
 /*

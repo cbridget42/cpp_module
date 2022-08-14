@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/13 19:12:22 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/14 17:18:37 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/14 14:46:46 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/14 17:55:59 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-FragTrap::FragTrap() : ClapTrap("def")
+DiamondTrap::DiamondTrap() : ScavTrap("def"), FragTrap("def"), name("def")
 {
-	hit_points = 100;
-	energy_points = 100;
-	attack_damage = 30;
-	std::cout << "FragTrap constructor called!\n";
-}
-
-FragTrap::FragTrap(std::string const str) : ClapTrap(str) {
-	hit_points = 100;
+	ClapTrap::name = "def_clap_name";
 	energy_points = 50;
-	attack_damage = 30;
-	std::cout << "FragTrap constructor called! FragTrap: " << name << " created!\n";
+	std::cout << "DiamondTrap constructor called!\n";
 }
 
-FragTrap::FragTrap( const FragTrap & src )
+DiamondTrap::DiamondTrap(std::string const str) : ScavTrap(str), FragTrap(str), name(str) {
+	ClapTrap::name = str + "_clap_name";
+	energy_points = 50;
+	std::cout << "DiamondTrap constructor called! DiamondTrap: " << name << " created!\n";
+}
+
+DiamondTrap::DiamondTrap( const DiamondTrap & src )
 {
 	*this = src;
 }
@@ -41,9 +39,9 @@ FragTrap::FragTrap( const FragTrap & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-FragTrap::~FragTrap()
+DiamondTrap::~DiamondTrap()
 {
-	std::cout << "FragTrap destructor called! FragTrap: " << name << " destroed!\n";
+	std::cout << "DimondTrap destructor called! DimondTrap: " << name << " destroed!\n";
 }
 
 
@@ -51,11 +49,12 @@ FragTrap::~FragTrap()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-FragTrap &				FragTrap::operator=( FragTrap const & rhs )
+DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
 {
 	if ( this != &rhs )
 	{
 		this->name = rhs.name;
+		this->ClapTrap::name = rhs.ClapTrap::name;
 		this->hit_points = rhs.hit_points;
 		this->energy_points = rhs.energy_points;
 		this->attack_damage = rhs.attack_damage;
@@ -68,9 +67,10 @@ FragTrap &				FragTrap::operator=( FragTrap const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void FragTrap::highFivesGuys(void) {
-	std::cout << "FragTrap: " << name << ": a positive high fives request!\n";
+void	DiamondTrap::whoAmI(){
+	std::cout << "my name is " << name << ", ClapTrap name is " << ClapTrap::name << std::endl;
 }
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
