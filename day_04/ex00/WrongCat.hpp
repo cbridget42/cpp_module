@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 19:58:34 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/17 20:06:07 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/17 20:19:21 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/17 20:21:59 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 # include <iostream>
 # include <string>
 
-class Dog : public Animal
+class WrongCat : public WrongAnimal
 {
 
 	public:
 
-		Dog();
-		Dog( Dog const & src );
-		~Dog();
+		WrongCat();
+		WrongCat( WrongCat const & src );
+		~WrongCat();
 
-		Dog &		operator=( Dog const & rhs );
-		void		makeSound() const;
+		WrongCat &		operator=( WrongCat const & rhs );
+		void			makeSound() const;
 
 	private:
 
 };
 
-#endif /* ************************************************************* DOG_H */
+std::ostream &			operator<<( std::ostream & o, WrongCat const & i );
+
+#endif /* ******************************************************** WRONGCAT_H */

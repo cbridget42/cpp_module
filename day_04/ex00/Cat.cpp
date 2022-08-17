@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 19:58:28 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/17 19:57:39 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/17 16:40:25 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/17 16:56:27 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Dog::Dog()
+Cat::Cat()
 {
-	type = "Dog";
-	std::cout << "Constructor Dog called!\n";
+	type = "Cat";
+	std::cout << "Constructor Cat called!\n";
 }
 
-Dog::Dog( const Dog & src )
+Cat::Cat( const Cat & src )
 {
 	*this = src;
 }
@@ -32,9 +32,9 @@ Dog::Dog( const Dog & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Dog::~Dog()
+Cat::~Cat()
 {
-	std::cout << "Destructor Dog called!\n";
+	std::cout << "Destructor Cat called!\n";
 }
 
 
@@ -42,7 +42,7 @@ Dog::~Dog()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Dog &				Dog::operator=( Dog const & rhs )
+Cat &				Cat::operator=( Cat const & rhs )
 {
 	if ( this != &rhs )
 	{
@@ -56,8 +56,8 @@ Dog &				Dog::operator=( Dog const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Dog::makeSound() const {
-	std::cout << "Bark! Bark! Bark!\n";
+void Cat::makeSound() const {
+	std::cout << "meow! meow! meow!\n";
 }
 
 

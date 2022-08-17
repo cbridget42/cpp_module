@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 19:58:28 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/17 19:57:39 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/17 20:11:25 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/17 20:16:24 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongAnimal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Dog::Dog()
+WrongAnimal::WrongAnimal() : type("")
 {
-	type = "Dog";
-	std::cout << "Constructor Dog called!\n";
+	std::cout << "Constructor WrongAnimal called!\n";
 }
 
-Dog::Dog( const Dog & src )
+WrongAnimal::WrongAnimal( const WrongAnimal & src )
 {
 	*this = src;
 }
@@ -32,9 +31,9 @@ Dog::Dog( const Dog & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Dog::~Dog()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Destructor Dog called!\n";
+	std::cout << "Destructor WrongAnimal called!\n";
 }
 
 
@@ -42,7 +41,7 @@ Dog::~Dog()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Dog &				Dog::operator=( Dog const & rhs )
+WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & rhs )
 {
 	if ( this != &rhs )
 	{
@@ -56,10 +55,13 @@ Dog &				Dog::operator=( Dog const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Dog::makeSound() const {
-	std::cout << "Bark! Bark! Bark!\n";
+void WrongAnimal::makeSound() const {
+	std::cout << "WrongAnimal sound!\n";
 }
 
+std::string WrongAnimal::getType() const {
+	return type;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
