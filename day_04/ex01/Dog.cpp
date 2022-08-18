@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 19:58:28 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/17 19:57:39 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/08/18 17:57:28 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 
 Dog::Dog()
 {
-	type = "Dog";
+	_type = "Dog";
+	_brain = new Brain();
 	std::cout << "Constructor Dog called!\n";
 }
 
@@ -34,6 +35,7 @@ Dog::Dog( const Dog & src )
 
 Dog::~Dog()
 {
+	delete _brain;
 	std::cout << "Destructor Dog called!\n";
 }
 
@@ -46,7 +48,8 @@ Dog &				Dog::operator=( Dog const & rhs )
 {
 	if ( this != &rhs )
 	{
-		this->type = rhs.type;
+		this->_type = rhs._type;
+		this->_brain = rhs._brain;
 	}
 	return *this;
 }
@@ -64,6 +67,10 @@ void Dog::makeSound() const {
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+Brain * Dog::getBrain() {
+	return (_brain);
+}
 
 
 /* ************************************************************************** */

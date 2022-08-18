@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 20:53:02 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/18 15:12:41 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/17 16:40:25 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/18 17:57:56 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Cat.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Brain::Brain()
+Cat::Cat()
 {
-	std::cout << "Constructor Brain called!\n";
+	_type = "Cat";
+	_brain = new Brain();
+	std::cout << "Constructor Cat called!\n";
 }
 
-Brain::Brain( const Brain & src )
+Cat::Cat( const Cat & src )
 {
 	*this = src;
 }
@@ -31,9 +33,10 @@ Brain::Brain( const Brain & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Brain::~Brain()
+Cat::~Cat()
 {
-	std::cout << "Destructor Brain called!\n";
+	delete _brain;
+	std::cout << "Destructor Cat called!\n";
 }
 
 
@@ -41,12 +44,12 @@ Brain::~Brain()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Brain &				Brain::operator=( Brain const & rhs )
+Cat &				Cat::operator=( Cat const & rhs )
 {
 	if ( this != &rhs )
 	{
-		for (int i = 0; i < 100; i++)
-			this->_ideas[i] = rhs._ideas[i];
+		this->_type = rhs._type;
+		this->_brain = rhs._brain;
 	}
 	return *this;
 }
@@ -56,10 +59,18 @@ Brain &				Brain::operator=( Brain const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void Cat::makeSound() const {
+	std::cout << "meow! meow! meow!\n";
+}
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+Brain * Cat::getBrain() {
+	return (_brain);
+}
 
 
 /* ************************************************************************** */

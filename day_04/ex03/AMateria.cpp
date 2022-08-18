@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 20:53:02 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/18 15:12:41 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/18 19:09:33 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/18 19:40:37 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "AMateria.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Brain::Brain()
+AMateria::AMateria() : _type("")
 {
-	std::cout << "Constructor Brain called!\n";
 }
 
-Brain::Brain( const Brain & src )
+AMateria::AMateria(std::string const & type) : _type(type)
+{
+}
+
+AMateria::AMateria( const AMateria & src )
 {
 	*this = src;
 }
@@ -31,9 +34,8 @@ Brain::Brain( const Brain & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Brain::~Brain()
+AMateria::~AMateria()
 {
-	std::cout << "Destructor Brain called!\n";
 }
 
 
@@ -41,12 +43,11 @@ Brain::~Brain()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Brain &				Brain::operator=( Brain const & rhs )
+AMateria &				AMateria::operator=( AMateria const & rhs )
 {
 	if ( this != &rhs )
 	{
-		for (int i = 0; i < 100; i++)
-			this->_ideas[i] = rhs._ideas[i];
+		this->_type = rhs._type;
 	}
 	return *this;
 }
@@ -56,10 +57,18 @@ Brain &				Brain::operator=( Brain const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void AMateria::use(ICharacter& target) {
+	(void)target;
+}
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+std::string const & AMateria::getType() const {
+	return _type;
+}
 
 
 /* ************************************************************************** */

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 20:53:02 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/18 15:12:41 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/18 19:55:49 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/18 20:02:29 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Cure.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Brain::Brain()
+Cure::Cure()
 {
-	std::cout << "Constructor Brain called!\n";
+	_type = "cure";
 }
 
-Brain::Brain( const Brain & src )
+Cure::Cure( const Cure & src )
 {
 	*this = src;
 }
@@ -31,9 +31,8 @@ Brain::Brain( const Brain & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Brain::~Brain()
+Cure::~Cure()
 {
-	std::cout << "Destructor Brain called!\n";
 }
 
 
@@ -41,12 +40,11 @@ Brain::~Brain()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Brain &				Brain::operator=( Brain const & rhs )
+Cure &				Cure::operator=( Cure const & rhs )
 {
 	if ( this != &rhs )
 	{
-		for (int i = 0; i < 100; i++)
-			this->_ideas[i] = rhs._ideas[i];
+		this->_type = rhs._type;
 	}
 	return *this;
 }
@@ -55,6 +53,14 @@ Brain &				Brain::operator=( Brain const & rhs )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+void Cure::use(ICharacter& target) {
+	std::cout << "* heals " << target.getName() << "’s wounds *\n";
+}
+
+AMateria* Cure::clone() const {
+	return new Cure();
+}
 
 
 /*

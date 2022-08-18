@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 20:53:02 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/18 15:12:41 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/18 19:15:41 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/18 19:51:52 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Ice.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Brain::Brain()
+Ice::Ice()
 {
-	std::cout << "Constructor Brain called!\n";
+	_type = "ice";
 }
 
-Brain::Brain( const Brain & src )
+Ice::Ice( const Ice & src )
 {
 	*this = src;
 }
@@ -31,9 +31,8 @@ Brain::Brain( const Brain & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Brain::~Brain()
+Ice::~Ice()
 {
-	std::cout << "Destructor Brain called!\n";
 }
 
 
@@ -41,12 +40,11 @@ Brain::~Brain()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Brain &				Brain::operator=( Brain const & rhs )
+Ice &				Ice::operator=( Ice const & rhs )
 {
 	if ( this != &rhs )
 	{
-		for (int i = 0; i < 100; i++)
-			this->_ideas[i] = rhs._ideas[i];
+		this->_type = rhs._type;
 	}
 	return *this;
 }
@@ -55,6 +53,14 @@ Brain &				Brain::operator=( Brain const & rhs )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+void Ice::use(ICharacter& target) {
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
+}
+
+AMateria* Ice::clone() const {
+	return new Ice();
+}
 
 
 /*

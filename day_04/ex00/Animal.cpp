@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 19:40:52 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/17 20:09:38 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/08/18 15:56:53 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal() : type("")
+AAnimal::AAnimal() : type("")
 {
 	std::cout << "Constructor Animal called!\n";
 }
 
-Animal::Animal( const Animal & src )
+AAnimal::AAnimal( const AAnimal & src )
 {
 	*this = src;
 }
@@ -31,7 +31,7 @@ Animal::Animal( const Animal & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
 	std::cout << "Destructor Animal called!\n";
 }
@@ -41,7 +41,7 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+AAnimal &				AAnimal::operator=( AAnimal const & rhs )
 {
 	if ( this != &rhs )
 	{
@@ -55,11 +55,11 @@ Animal &				Animal::operator=( Animal const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Animal::makeSound() const {
+void AAnimal::makeSound() const {
 	std::cout << "Animal sound!\n";
 }
 
-std::string Animal::getType() const {
+std::string AAnimal::getType() const {
 	return type;
 }
 

@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 19:40:44 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/18 15:56:53 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/18 19:54:46 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/18 19:55:35 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
+# include "AMateria.hpp"
 # include <iostream>
 # include <string>
 
-class AAnimal
+class Cure : public AMateria
 {
 
 	public:
 
-		AAnimal();
-		AAnimal( AAnimal const & src );
-		virtual ~AAnimal();
+		Cure();
+		Cure( Cure const & src );
+		~Cure();
 
-		AAnimal &			operator=( AAnimal const & rhs );
+		Cure &		operator=( Cure const & rhs );
+		void		use(ICharacter& target);
+		AMateria*	clone() const;
 
-		virtual void		makeSound() const;
-		std::string			getType() const;
-
-	protected:
-		std::string	type;
+	private:
 
 };
 
-#endif /* ********************************************************** ANIMAL_H */
+#endif /* ************************************************************ CURE_H */

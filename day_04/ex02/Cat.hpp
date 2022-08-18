@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 19:40:44 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/18 15:56:53 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/17 16:40:15 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/18 16:07:50 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
+# include "Brain.hpp"
+# include "AAnimal.hpp"
 # include <iostream>
 # include <string>
 
-class AAnimal
+class Cat : public AAnimal
 {
 
 	public:
 
-		AAnimal();
-		AAnimal( AAnimal const & src );
-		virtual ~AAnimal();
+		Cat();
+		Cat( Cat const & src );
+		~Cat();
 
-		AAnimal &			operator=( AAnimal const & rhs );
+		Cat &				operator=( Cat const & rhs );
+		void				makeSound() const;
+		Brain *				getBrain();
 
-		virtual void		makeSound() const;
-		std::string			getType() const;
-
-	protected:
-		std::string	type;
+	private:
+		Brain				*_brain;
 
 };
 
-#endif /* ********************************************************** ANIMAL_H */
+#endif /* ************************************************************* CAT_H */

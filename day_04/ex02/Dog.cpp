@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 20:53:02 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/18 15:12:41 by cbridget         ###   ########.fr       */
+/*   Created: 2022/08/14 19:58:28 by cbridget          #+#    #+#             */
+/*   Updated: 2022/08/18 17:58:05 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Dog.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Brain::Brain()
+Dog::Dog()
 {
-	std::cout << "Constructor Brain called!\n";
+	_type = "Dog";
+	_brain = new Brain();
+	std::cout << "Constructor Dog called!\n";
 }
 
-Brain::Brain( const Brain & src )
+Dog::Dog( const Dog & src )
 {
 	*this = src;
 }
@@ -31,9 +33,10 @@ Brain::Brain( const Brain & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Brain::~Brain()
+Dog::~Dog()
 {
-	std::cout << "Destructor Brain called!\n";
+	delete _brain;
+	std::cout << "Destructor Dog called!\n";
 }
 
 
@@ -41,12 +44,12 @@ Brain::~Brain()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Brain &				Brain::operator=( Brain const & rhs )
+Dog &				Dog::operator=( Dog const & rhs )
 {
 	if ( this != &rhs )
 	{
-		for (int i = 0; i < 100; i++)
-			this->_ideas[i] = rhs._ideas[i];
+		this->_type = rhs._type;
+		this->_brain = rhs._brain;
 	}
 	return *this;
 }
@@ -56,10 +59,18 @@ Brain &				Brain::operator=( Brain const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void Dog::makeSound() const {
+	std::cout << "Bark! Bark! Bark!\n";
+}
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+Brain * Dog::getBrain() {
+	return (_brain);
+}
 
 
 /* ************************************************************************** */

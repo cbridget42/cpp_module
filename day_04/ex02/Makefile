@@ -6,15 +6,15 @@
 #    By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/14 19:36:16 by cbridget          #+#    #+#              #
-#    Updated: 2022/08/18 14:03:36 by cbridget         ###   ########.fr        #
+#    Updated: 2022/08/18 16:08:06 by cbridget         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRC = main.cpp AAnimal.cpp Dog.cpp Cat.cpp Brain.cpp
 
-HDR = Animal.hpp Dog.hpp Cat.hpp Brain.hpp
+HDR = AAnimal.hpp Dog.hpp Cat.hpp Brain.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
