@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 16:40:25 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/18 17:57:56 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/08/21 18:53:53 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ Cat::Cat()
 
 Cat::Cat( const Cat & src )
 {
-	*this = src;
+	this->_type = src._type;
+	this->_brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->_brain[i] = src._brain[i];
 }
 
 
@@ -49,7 +52,9 @@ Cat &				Cat::operator=( Cat const & rhs )
 	if ( this != &rhs )
 	{
 		this->_type = rhs._type;
-		this->_brain = rhs._brain;
+		this->_brain = new Brain();
+		for (int i = 0; i < 100; i++)
+			this->_brain[i] = rhs._brain[i];
 	}
 	return *this;
 }

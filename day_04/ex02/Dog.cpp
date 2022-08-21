@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 19:58:28 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/18 17:58:05 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/08/21 18:54:00 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ Dog::Dog()
 
 Dog::Dog( const Dog & src )
 {
-	*this = src;
+	this->_type = src._type;
+	this->_brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->_brain[i] = src._brain[i];
 }
 
 
@@ -49,7 +52,9 @@ Dog &				Dog::operator=( Dog const & rhs )
 	if ( this != &rhs )
 	{
 		this->_type = rhs._type;
-		this->_brain = rhs._brain;
+		this->_brain = new Brain();
+		for (int i = 0; i < 100; i++)
+			this->_brain[i] = rhs._brain[i];
 	}
 	return *this;
 }
