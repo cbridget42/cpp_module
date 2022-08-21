@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: cbridget <cbridget@student-21school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 19:54:46 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/18 19:55:35 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/08/20 13:16:09 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "AMateria.hpp"
 # include <iostream>
 # include <string>
+
+class AMateria;
 
 class Cure : public AMateria
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: cbridget <cbridget@student-21school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 19:15:41 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/18 19:51:52 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/08/21 12:17:19 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Ice::Ice()
+Ice::Ice() : AMateria("ice")
 {
-	_type = "ice";
 }
 
-Ice::Ice( const Ice & src )
+Ice::Ice( const Ice & src ) : AMateria("cure")
 {
 	*this = src;
 }
@@ -42,10 +41,7 @@ Ice::~Ice()
 
 Ice &				Ice::operator=( Ice const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->_type = rhs._type;
-	}
+	(void)rhs;
 	return *this;
 }
 

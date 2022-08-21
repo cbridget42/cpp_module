@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: cbridget <cbridget@student-21school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 19:55:49 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/18 20:02:29 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/08/21 12:15:58 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cure::Cure()
+Cure::Cure() : AMateria("cure")
 {
-	_type = "cure";
 }
 
-Cure::Cure( const Cure & src )
+Cure::Cure( const Cure & src ) : AMateria("cure")
 {
 	*this = src;
 }
@@ -42,10 +41,7 @@ Cure::~Cure()
 
 Cure &				Cure::operator=( Cure const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->_type = rhs._type;
-	}
+	(void)rhs;
 	return *this;
 }
 
