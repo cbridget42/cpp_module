@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 14:23:18 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/31 16:44:43 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/08/31 16:44:13 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,19 @@ void Bureaucrat::decrementGrade() {
 	if (_grade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();
 	_grade++;
+}
+
+void Bureaucrat::signForm(Form &form) {
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << '\n';
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->getName() << " couldn’t sign " << form.getName() \
+		<< " because " << e.what() << '\n';
+	}
 }
 
 

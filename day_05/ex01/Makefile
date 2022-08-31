@@ -6,15 +6,15 @@
 #    By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 14:20:19 by cbridget          #+#    #+#              #
-#    Updated: 2022/08/31 14:52:48 by cbridget         ###   ########.fr        #
+#    Updated: 2022/08/31 16:27:38 by cbridget         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 
-HDR = Bureaucrat.hpp
+HDR = Bureaucrat.hpp Form.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
