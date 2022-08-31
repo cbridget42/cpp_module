@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 14:23:25 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/30 18:35:35 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/08/31 17:23:27 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,13 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw() {
-					return "exception: grade is too high!!!";
-				};
+				virtual const char* what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw() {
-					return "exception: grade is too low!!!";
-				};
+				virtual const char* what() const throw();
 		};
 
 	private:

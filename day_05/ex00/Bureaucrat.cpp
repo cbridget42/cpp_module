@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 14:23:18 by cbridget          #+#    #+#             */
-/*   Updated: 2022/08/31 16:44:43 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/08/31 17:23:22 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,14 @@ std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+	return "exception: grade is too high!!!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+	return "exception: grade is too low!!!";
+}
 
 void Bureaucrat::incrementGrade() {
 	if (_grade - 1 < 1)
