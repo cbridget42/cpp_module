@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 19:16:49 by cbridget          #+#    #+#             */
-/*   Updated: 2022/09/01 13:32:36 by cbridget         ###   ########.fr       */
+/*   Created: 2022/09/01 13:44:19 by cbridget          #+#    #+#             */
+/*   Updated: 2022/09/01 16:56:12 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request", 72, 45), \
-			_target("def")
+Intern::Intern()
 {
+	forms[0].name = "presidential pardon";
+	forms[0].function = ppForm;
+	forms[1].name = "robotomy request";
+	forms[1].function = rrForm;
+	forms[2].name = "shrubbery creation";
+	forms[2].function = scForm;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Robotomy Request", 72, 45), \
-			_target(target)
+Intern::Intern( const Intern & src )
 {
-}
-
-RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src ) : \
-			AForm("Robotomy Request", 72, 45), \
-			_target(src._target)
-{
+	*this = src;
 }
 
 
@@ -37,7 +36,7 @@ RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src ) : \
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-RobotomyRequestForm::~RobotomyRequestForm()
+Intern::~Intern()
 {
 }
 
@@ -46,12 +45,9 @@ RobotomyRequestForm::~RobotomyRequestForm()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
+Intern &				Intern::operator=( Intern const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->_target = rhs._target;
-	}
+	(void)rhs;
 	return *this;
 }
 
@@ -60,14 +56,27 @@ RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm con
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
-	this->checkRequirements(executor);
-	std::cout << "drilling noises!!! drilling noises!!!\n";
-	srand(time(0));
-	if (rand() % 2)
-		std::cout << _target << " has been robotomized successfully!\n";
-	else
-		std::cout << "robotomy failed!\n";
+AForm* Intern::makeForm(std::string name, std::string target) {
+	for (int i = 0; i < 3; i++) {
+		if (name == forms[i].name){
+			std::cout << "Intern creates " << name << '\n';
+			return forms[i].function(target);
+		}
+	}
+	std::cout << "Intern can't create " << name << '\n';
+	return 0;
+}
+
+AForm* Intern::ppForm(std::string target) {
+	return new PresidentialPardonForm(target);
+}
+
+AForm* Intern::rrForm(std::string target) {
+	return new RobotomyRequestForm(target);
+}
+
+AForm* Intern::scForm(std::string target) {
+	return new ShrubberyCreationForm(target);
 }
 
 
