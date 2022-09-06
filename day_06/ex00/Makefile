@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+         #
+#    By: cbridget <cbridget@student-21school.ru>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 14:20:19 by cbridget          #+#    #+#              #
-#    Updated: 2022/09/02 16:48:00 by cbridget         ###   ########.fr        #
+#    Updated: 2022/09/03 21:18:56 by cbridget         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = convert
 
-SRC = main.cpp
+SRC = main.cpp MyExeptions.cpp
 
-HDR =
+HDR = MyExeptions.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

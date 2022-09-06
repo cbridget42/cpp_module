@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MyExeptions.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: cbridget <cbridget@student-21school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 18:06:24 by cbridget          #+#    #+#             */
-/*   Updated: 2022/09/02 18:11:28 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/09/03 21:24:35 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include <string>
 
-class NotPrintableExeption : public std::exception
+class NotCorectExeption : public std::exception
 {
 
 	public:
