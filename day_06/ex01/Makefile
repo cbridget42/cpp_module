@@ -6,15 +6,15 @@
 #    By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 14:20:19 by cbridget          #+#    #+#              #
-#    Updated: 2022/09/10 12:40:36 by cbridget         ###   ########.fr        #
+#    Updated: 2022/09/10 14:41:08 by cbridget         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
+NAME = a.out
 
-SRC = main.cpp MyExeptions.cpp utilities.cpp
+SRC = main.cpp
 
-HDR = MyExeptions.hpp header.h
+HDR =
 
 OBJ = $(SRC:.cpp=.o)
 
