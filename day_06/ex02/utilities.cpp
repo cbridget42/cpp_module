@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:42:05 by cbridget          #+#    #+#             */
-/*   Updated: 2022/09/10 14:44:48 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/09/10 19:51:30 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,21 @@ void identify(Base* p) {
 
 void identify(Base& p) {
 	try {
-		dynamic_cast<A &>(p);
+		(void)dynamic_cast<A &>(p);
 		std::cout << "p: A\n";
 		return;
 	}
 	catch (std::exception &e){
 	}
 	try {
-		dynamic_cast<B &>(p);
+		(void)dynamic_cast<B &>(p);
 		std::cout << "p: B\n";
 		return;
 	}
 	catch (std::exception &e){
 	}
 	try {
-		dynamic_cast<C &>(p);
+		(void)dynamic_cast<C &>(p);
 		std::cout << "p: C\n";
 		return;
 	}

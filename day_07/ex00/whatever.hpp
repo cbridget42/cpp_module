@@ -1,0 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/13 18:09:14 by cbridget          #+#    #+#             */
+/*   Updated: 2022/09/13 18:24:51 by cbridget         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+template<typename T>
+void swap(T &a, T &b) {
+	T tmp = a;
+	a = b;
+	b = tmp;
+}
+
+template<typename T>
+T min(T a, T b) {
+	return (a < b)? a : b;
+}
+
+template<typename T>
+T max(T a, T b) {
+	return (a > b)? a : b;
+}
