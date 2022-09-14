@@ -5,46 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 18:41:46 by cbridget          #+#    #+#             */
-/*   Updated: 2022/09/14 12:57:37 by cbridget         ###   ########.fr       */
+/*   Created: 2022/09/14 13:28:33 by cbridget          #+#    #+#             */
+/*   Updated: 2022/09/14 17:30:34 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "Array.tpp"
 
-void test1(int const &x) {
-	std::cout << "test1 x=" << x << std::endl;
-}
-
-template<typename T>
-void test2(T x) {
-	std::cout << "test2 x=" << x << std::endl;
-}
-
-class Test3 {
+class test {
 	public:
-		Test3(): _t(42) {};
-	int _t;
+		int a;
 };
 
-std::ostream & operator<<(std::ostream &o, Test3 const &rhs){
-	o<<rhs._t;
-	return o;
-}
-
 int main() {
-	int arr1[3] = {1, 3, 5};
-	std::string arr2[3] = {"str1", "str2", "str3"};
-	Test3 arr3[3];
+	Array<int> x(5);
+	x[0] = 42;
+	x[1] = 21;
+	std::cout << "x= " << x << std::endl;
+	Array<int> y = x;
+	x[0] = -42;
+	std::cout << "y= " << y << std::endl;
 
-	iter(arr1, 3, test1);
-	std::cout << '\n';
+	Array<std::string> s(5);
+	s[0] = "Hello";
+	s[1] = "World!";
+	std::cout << "s= " << s << std::endl;
 
-	iter(arr2, 3, test2);
-	std::cout << '\n';
+	Array<test> t(3);
+	t[0].a = 42;
+	std::cout << "t= " << t[0].a << std::endl;
 
-	iter(arr3, 3, test2);
-	std::cout << '\n';
+	Array<int> empty;
+	try {
+		empty[0];
+	} catch (std::exception &e) {
+		std::cout << "exception: " << e.what() << std::endl;
+	}
+
+	Array<int> lol(0);
 
 	return 0;
 }
