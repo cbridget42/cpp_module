@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 18:07:14 by cbridget          #+#    #+#             */
-/*   Updated: 2022/09/14 13:22:21 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/09/15 14:50:42 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main( void ) {
 	Test x(50), y(100);
 	std::cout << '\n' << min(x, y) << std::endl;
 	swap(x, y);
-	std::cout << "x=" << x << "y=" << y <<std::endl;
+	std::cout << "x=" << x << ", y=" << y <<std::endl;
 
 	return 0;
 }
