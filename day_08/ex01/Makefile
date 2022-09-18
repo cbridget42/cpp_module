@@ -6,15 +6,15 @@
 #    By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 14:20:19 by cbridget          #+#    #+#              #
-#    Updated: 2022/09/17 17:15:29 by cbridget         ###   ########.fr        #
+#    Updated: 2022/09/18 13:51:51 by cbridget         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = ex01
 
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 
-HDR = easyfind.hpp
+HDR = Span.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 15:30:30 by cbridget          #+#    #+#             */
-/*   Updated: 2022/09/17 17:51:10 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/09/18 11:46:40 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,14 @@ class NotFoundExeption : public std::exception {
 		}
 };
 
-template<class T>
-T::iterator easyfind(T container, int find) {
+template<typename T>
+typename T::iterator easyfind(T &container, int find) {
 
-	T::iterator it;
-	it = std::find(container.begine(), container.end(), find);
+	typename T::iterator it = std::find(container.begin(), container.end(), find);
 	if (it == container.end())
 		throw NotFoundExeption();
 	else
 		return it;
-
-
-//	T::iterator it_end = container.end();
-
-/*	for (T::iterator it_begine = container.begine(); it_begine != it_end; it_begine++) {
-		if (*it_begine == find)
-			return *it_begine;
-	}*/
-//	throw NotFoundExeption();
 }
 
 # endif
