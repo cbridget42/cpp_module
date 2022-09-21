@@ -6,15 +6,15 @@
 #    By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 14:20:19 by cbridget          #+#    #+#              #
-#    Updated: 2022/09/19 17:57:07 by cbridget         ###   ########.fr        #
+#    Updated: 2022/09/21 23:26:13 by cbridget         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = a.out
 
-SRC = main.cpp Span.cpp
+SRC = main.cpp
 
-HDR = Span.hpp
+HDR = MutantStack.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

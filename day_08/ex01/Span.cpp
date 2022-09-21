@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 11:50:14 by cbridget          #+#    #+#             */
-/*   Updated: 2022/09/18 14:12:26 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/09/19 17:53:37 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Span::Span() : _arr(0), _size(0)
+Span::Span()
 {
 }
 
@@ -26,7 +26,8 @@ Span::Span(unsigned int length) : _arr(0), _size(length)
 
 Span::Span( const Span & src )
 {
-	std::copy(src._arr.begin(), src._arr.end(), _arr.begin());
+	_arr.insert(_arr.begin(), src._arr.begin(), src._arr.end());
+	_size = src._size;
 }
 
 
@@ -47,7 +48,8 @@ Span &				Span::operator=( Span const & rhs )
 {
 	if ( this != &rhs )
 	{
-		std::copy(rhs._arr.begin(), rhs._arr.end(), _arr.begin());
+		_arr.insert(_arr.begin(), rhs._arr.begin(), rhs._arr.end());
+		_size = rhs._size;
 	}
 	return *this;
 }
@@ -74,10 +76,13 @@ void Span::addNumber(int num) {
 int Span::shortestSpan() const {
 	if (_arr.size() <= 1)
 		throw NoSpanExeption();
-	std::vector<int>::const_iterator it = _arr.begin();
-	int res = (*it > *(it + 1)) ? *it - *(++it) : *(++it) - *it;
-	for (;it + 1 != _arr.end(); ++it) {
-		int tmp = (*it > *(it + 1)) ? *it - *(it + 1) : *(it + 1) - *it;
+	std::vector<int> tmp_arr(_size);
+	std::copy(_arr.begin(), _arr.end(), tmp_arr.begin());
+	std::sort(tmp_arr.begin(), tmp_arr.end());
+	std::vector<int>::const_iterator it = tmp_arr.begin();
+	int res = *(it + 1) - *it;
+	for (;it + 1 != tmp_arr.end(); ++it) {
+		int tmp = *(it + 1) - *it;
 		if (tmp < res)
 			res = tmp;
 	}
@@ -87,14 +92,13 @@ int Span::shortestSpan() const {
 int Span::longestSpan() const {
 	if (_arr.size() <= 1)
 		throw NoSpanExeption();
-	std::vector<int>::const_iterator it = _arr.begin();
-	int res = (*it > *(it + 1)) ? *it - *(++it) : *(++it) - *it;
-	for (;it + 1 != _arr.end(); ++it) {
-		int tmp = (*it > *(it + 1)) ? *it - *(it + 1) : *(it + 1) - *it;
-		if (tmp > res)
-			res = tmp;
-	}
-	return res;
+	return *std::max_element(_arr.begin(), _arr.end()) - *std::min_element(_arr.begin(), _arr.end());
+}
+
+void Span::addNumbers(std::vector<int>::iterator it, std::vector<int>::iterator ite) {
+	if (_arr.size() + std::distance(it, ite) > _size)
+		throw ArrayIsFullExeption();
+	_arr.insert(_arr.begin() + _arr.size(), it, ite);
 }
 
 

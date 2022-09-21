@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 11:50:08 by cbridget          #+#    #+#             */
-/*   Updated: 2022/09/18 14:12:21 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/09/19 17:20:57 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 # include <string>
 # include <vector>
 # include <algorithm>
+# include <time.h>
+
 
 class Span
 {
 
 	public:
 
-		Span();
 		Span(unsigned int length);
 		Span( Span const & src );
 		~Span();
@@ -32,6 +33,7 @@ class Span
 		void				addNumber(int num);
 		int					shortestSpan() const;
 		int					longestSpan() const;
+		void				addNumbers(std::vector<int>::iterator it, std::vector<int>::iterator ite);
 
 		class ArrayIsFullExeption : public std::exception
 		{
@@ -47,6 +49,7 @@ class Span
 
 	private:
 
+		Span();
 		std::vector<int>	_arr;
 		unsigned int		_size;
 
