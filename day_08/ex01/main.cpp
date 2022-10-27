@@ -6,7 +6,7 @@
 /*   By: cbridget <cbridget@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 13:21:05 by cbridget          #+#    #+#             */
-/*   Updated: 2022/09/19 17:54:06 by cbridget         ###   ########.fr       */
+/*   Updated: 2022/10/27 22:04:48 by cbridget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,21 @@ int main() {
 	}
 
 	std::cout << std::endl;
-	spn.addNumbers(test.begin(), test.end() - 1);
+	try {
+		spn.addNumbers(test.begin(), test.end() - 1);
+	} catch (std::exception &e) {
+		std::cout << e.what() << '\n';
+	}
 	std::cout << spn.shortestSpan() << std::endl;
 	std::cout << spn.longestSpan() << std::endl;
+
+	std::cout << std::endl;
+	Span err(1);
+	err.addNumber(42);
+	try {
+		std::cout << err.shortestSpan() << std::endl;
+	} catch (std::exception &e) {
+		std::cout << e.what() << '\n';
+	}
 	return 0;
 }
